@@ -145,6 +145,24 @@ nav button.on{background:var(--olive);color:#fff}
     box-sizing:border-box!important;
   }
 }
+
+/* Keep the savings summary on exactly one line so the layout never shifts. */
+.topline{
+  width:100%;
+  min-width:0;
+  flex-wrap:nowrap !important;
+  white-space:nowrap !important;
+}
+.topline > *{
+  white-space:nowrap !important;
+}
+.topline > :first-child{
+  min-width:0;
+  flex:1 1 auto;
+}
+.topline > :last-child{
+  flex:0 0 auto;
+}
 </style>
 </style>
 </head>
