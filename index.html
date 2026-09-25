@@ -8,17 +8,54 @@
 <meta name="apple-mobile-web-app-title" content="goals!">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>goals!</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root{
-  --purple:#5F33FF; --lav:#F4C2FF; --red:#F64740; --olive:#827F35; --ink:#272727; --cream:#F7EFD8;
-  --bg:#F64740; --card:#F4C2FF; --mute:rgba(39,39,39,.58); --line:rgba(39,39,39,.16); --line2:rgba(39,39,39,.28);
-  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
+  --purple:#5F33FF;
+  --lav:#F4C2FF;
+  --red:#F64740;
+  --olive:#827F35;
+  --ink:#272727;
+  --cream:#F7EFD8;
+  --bg:#F64740;
+  --card:#F4C2FF;
+  --mute:rgba(39,39,39,.58);
+  --line:rgba(39,39,39,.16);
+  --line2:rgba(39,39,39,.28);
+
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#F64740;--card:#F4C2FF;--ink:#272727;--mute:rgba(39,39,39,.58);--line:rgba(39,39,39,.16);--line2:rgba(39,39,39,.28)}}
-:root[data-theme="dark"]{--bg:#F64740;--card:#F4C2FF;--ink:#272727;--mute:rgba(39,39,39,.58);--line:rgba(39,39,39,.16);--line2:rgba(39,39,39,.28)}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#F64740;
+    --card:#F4C2FF;
+    --ink:#272727;
+    --mute:rgba(39,39,39,.58);
+    --line:rgba(39,39,39,.16);
+    --line2:rgba(39,39,39,.28);
+  }
+}
+
+:root[data-theme="dark"]{
+  --bg:#F64740;
+  --card:#F4C2FF;
+  --ink:#272727;
+  --mute:rgba(39,39,39,.58);
+  --line:rgba(39,39,39,.16);
+  --line2:rgba(39,39,39,.28);
+}
+
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
 html{
   scroll-padding-top:env(safe-area-inset-top,0px);
   width:100%;
@@ -27,6 +64,7 @@ html{
   overscroll-behavior-x:none;
   touch-action:pan-y;
 }
+
 body{
   margin:0;
   width:100%;
@@ -41,37 +79,188 @@ body{
   margin-right:auto;
   -webkit-text-size-adjust:100%;
 }
-.disp{font-family:"Space Grotesk",Inter,sans-serif;font-weight:700}
-, #app{
+
+.disp{
+  font-family:"Space Grotesk",Inter,sans-serif;
+  font-weight:700;
+}
+
+#app{
   width:100%;
   max-width:100%;
   min-width:0;
   overflow-x:hidden;
 }
-header{padding:16px 14px;background:var(--cream);border-radius:22px;margin-bottom:12px}
-header .eyebrow,header .sub,header .sub b{color:var(--olive)}
-.eyebrow{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);font-weight:600}
-.htop{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.hleft{flex:1;min-width:0}
-.title{font-family:"Baloo 2","Space Grotesk",sans-serif;font-weight:800;font-size:60px;line-height:.82;letter-spacing:0;text-align:right;color:var(--olive);white-space:nowrap;align-self:stretch;display:flex;align-items:center}
-.hero .title{color:#fff}
-.big{font-size:46px;line-height:1;margin-top:6px;letter-spacing:-.01em}
-header .big{color:var(--olive)}
-.big.neg{color:var(--red)}
-.unit{font-size:16px;color:var(--mute);font-family:Inter,sans-serif;font-weight:500;margin-left:2px}
-.sub{color:var(--mute);font-size:14px;margin-top:6px}
-.sub b{color:var(--ink)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:14px 12px;margin-bottom:12px;box-shadow:0 1px 0 rgba(0,0,0,.02)}
-h2{font-size:16px;margin:2px 4px 10px;display:flex;align-items:center;gap:8px}
-h2 .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
-h2 em{font-family:Inter,sans-serif;font-weight:500;font-style:normal;font-size:11.5px;color:var(--mute);margin-left:auto}
-.row{display:grid;grid-template-columns:minmax(0,1fr) repeat(7,30px);gap:4px;align-items:center;padding:6px 0;width:100%;min-width:0}
-.row+.row:not(.hd){border-top:1px solid var(--line)}
-.hd{text-align:center;font-size:10.5px;color:var(--mute);padding-top:0;font-weight:600}
-.hd b{display:block;font-weight:700;font-size:12px;margin-top:1px;color:var(--ink)}
-.hd .t b{color:var(--purple)}
-.lbl{font-size:13.5px;line-height:1.2;font-weight:600;padding-right:4px;text-transform:lowercase;min-width:0;overflow:hidden}
-.lbl small{display:block;color:var(--mute);font-weight:500;font-size:10.5px;margin-top:2px}
+
+header{
+  padding:16px 14px;
+  background:var(--cream);
+  border-radius:22px;
+  margin-bottom:12px;
+}
+
+header .eyebrow,
+header .sub,
+header .sub b{
+  color:var(--olive);
+}
+
+.eyebrow{
+  font-size:12px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--mute);
+  font-weight:600;
+}
+
+.htop{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+.hleft{
+  flex:1;
+  min-width:0;
+}
+
+.title{
+  font-family:"Baloo 2","Space Grotesk",sans-serif;
+  font-weight:800;
+  font-size:60px;
+  line-height:.82;
+  letter-spacing:0;
+  text-align:right;
+  color:var(--olive);
+  white-space:nowrap;
+  align-self:stretch;
+  display:flex;
+  align-items:center;
+}
+
+.hero .title{
+  color:#fff;
+}
+
+.big{
+  font-size:46px;
+  line-height:1;
+  margin-top:6px;
+  letter-spacing:-.01em;
+}
+
+header .big{
+  color:var(--olive);
+}
+
+.big.neg{
+  color:var(--red);
+}
+
+.unit{
+  font-size:16px;
+  color:var(--mute);
+  font-family:Inter,sans-serif;
+  font-weight:500;
+  margin-left:2px;
+}
+
+.sub{
+  color:var(--mute);
+  font-size:14px;
+  margin-top:6px;
+}
+
+.sub b{
+  color:var(--ink);
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:14px 12px;
+  margin-bottom:12px;
+  box-shadow:0 1px 0 rgba(0,0,0,.02);
+}
+
+h2{
+  font-size:16px;
+  margin:2px 4px 10px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+h2 .dot{
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  display:inline-block;
+}
+
+h2 em{
+  font-family:Inter,sans-serif;
+  font-weight:500;
+  font-style:normal;
+  font-size:11.5px;
+  color:var(--mute);
+  margin-left:auto;
+}
+
+.row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) repeat(7,30px);
+  gap:4px;
+  align-items:center;
+  padding:6px 0;
+  width:100%;
+  min-width:0;
+}
+
+.row+.row:not(.hd){
+  border-top:1px solid var(--line);
+}
+
+.hd{
+  text-align:center;
+  font-size:10.5px;
+  color:var(--mute);
+  padding-top:0;
+  font-weight:600;
+}
+
+.hd b{
+  display:block;
+  font-weight:700;
+  font-size:12px;
+  margin-top:1px;
+  color:var(--ink);
+}
+
+.hd .t b{
+  color:var(--purple);
+}
+
+.lbl{
+  font-size:13.5px;
+  line-height:1.2;
+  font-weight:600;
+  padding-right:4px;
+  text-transform:lowercase;
+  min-width:0;
+  overflow:hidden;
+}
+
+.lbl small{
+  display:block;
+  color:var(--mute);
+  font-weight:500;
+  font-size:10.5px;
+  margin-top:2px;
+}
+
 .c{
   width:30px;
   min-width:30px;
@@ -97,303 +286,1018 @@ h2 em{font-family:Inter,sans-serif;font-weight:500;font-style:normal;font-size:1
   -webkit-appearance:none;
   transform:none;
 }
-.c.today{border-color:var(--purple);border-width:1.5px;box-shadow:inset 0 0 0 2.5px var(--purple)}
-.c.s1{background:var(--olive);border-color:var(--olive)}
-.c.s2{background:var(--red);border-color:var(--red)}
-.c.future{opacity:.4;pointer-events:none}
-.c.today.s1,.c.today.s2{border-color:var(--purple)}
-.note{font-size:11.5px;color:var(--mute);text-align:center;margin:10px 4px 0;line-height:1.4}
-.pri{width:100%;border:0;border-radius:16px;padding:15px;background:var(--purple);color:#fff;font:700 15px "Space Grotesk",sans-serif;margin-top:10px;letter-spacing:.01em}
-.pri:disabled{opacity:.35}
-.ghost{width:100%;border:0;background:none;color:var(--mute);font:600 14px Inter,sans-serif;padding:12px}
-nav{position:fixed;left:0;right:0;bottom:0;width:100%;max-width:100vw;overflow:hidden;display:flex;justify-content:center;gap:8px;background:var(--bg);border-top:1px solid var(--line);padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px))}
-nav button{flex:1;max-width:240px;border:0;border-radius:13px;padding:11px;background:none;color:var(--mute);font:700 13.5px "Space Grotesk",sans-serif;letter-spacing:.02em}
-nav button.on{background:var(--olive);color:#fff}
-.bar{margin:12px 4px}
-.bar>div:first-child{display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px;font-weight:600}
-.trk{height:9px;background:var(--line);border-radius:6px;overflow:hidden}
-.trk i{display:block;height:100%;border-radius:6px}
-.grp{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:14px 4px 2px;font-weight:700}
-.wk{display:flex;justify-content:space-between;padding:11px 4px;font-size:14px;border-top:1px solid var(--line)}
-.wk span{color:var(--mute);font-weight:600}
-.wk span.neg{color:var(--red)}
-.hero{background:linear-gradient(135deg,var(--purple),var(--olive));border-radius:22px;padding:20px 16px;margin-bottom:12px;color:#fff}
-.hero .eyebrow{color:rgba(255,255,255,.75)}
-.hero .big{color:#fff}
-.hero .sub{color:rgba(255,255,255,.85)}
-.hero .sub b{color:#fff}
-#m{position:fixed;inset:0;background:rgba(20,18,16,.45);display:none;align-items:flex-end;justify-content:center;z-index:9}
-#m.open{display:flex}
-.sheet{background:var(--card);width:100%;max-width:520px;border-radius:24px 24px 0 0;padding:22px 20px calc(18px + env(safe-area-inset-bottom,0px))}
-.sheet h3{font-family:"Space Grotesk",sans-serif;margin:0 0 6px;font-size:21px;font-weight:700}
-.sheet p{color:var(--mute);font-size:14px;margin:8px 0;line-height:1.5}
-.sheet .row2{display:flex;justify-content:space-between;font-size:14px;padding:7px 0;border-top:1px solid var(--line)}
-.chk{display:flex;gap:10px;align-items:center;font-size:14px;margin-top:12px}
-.chk input{width:22px;height:22px;accent-color:var(--purple)}
-#err{position:fixed;top:0;left:0;right:0;background:var(--red);color:#fff;padding:12px 16px;font:600 13px Inter,sans-serif;z-index:99;display:none}
 
-<style>
-/* iPhone stability: no horizontal pan, no zoom, and identical checkbox geometry in every state. */
+.c.today{
+  border-color:var(--purple);
+  border-width:1.5px;
+  box-shadow:inset 0 0 0 2.5px var(--purple);
+}
+
+.c.s1{
+  background:var(--olive);
+  border-color:var(--olive);
+}
+
+.c.s2{
+  background:var(--red);
+  border-color:var(--red);
+}
+
+.c.future{
+  opacity:.4;
+  pointer-events:none;
+}
+
+.c.today.s1,
+.c.today.s2{
+  border-color:var(--purple);
+}
+
+.note{
+  font-size:11.5px;
+  color:var(--mute);
+  text-align:center;
+  margin:10px 4px 0;
+  line-height:1.4;
+}
+
+.pri{
+  width:100%;
+  border:0;
+  border-radius:16px;
+  padding:15px;
+  background:var(--purple);
+  color:#fff;
+  font:700 15px "Space Grotesk",sans-serif;
+  margin-top:10px;
+  letter-spacing:.01em;
+}
+
+.pri:disabled{
+  opacity:.35;
+}
+
+.ghost{
+  width:100%;
+  border:0;
+  background:none;
+  color:var(--mute);
+  font:600 14px Inter,sans-serif;
+  padding:12px;
+}
+
+nav{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  max-width:100vw;
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  background:var(--bg);
+  border-top:1px solid var(--line);
+  padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));
+}
+
+nav button{
+  flex:1;
+  max-width:240px;
+  border:0;
+  border-radius:13px;
+  padding:11px;
+  background:none;
+  color:var(--mute);
+  font:700 13.5px "Space Grotesk",sans-serif;
+  letter-spacing:.02em;
+}
+
+nav button.on{
+  background:var(--olive);
+  color:#fff;
+}
+
+.bar{
+  margin:12px 4px;
+}
+
+.bar>div:first-child{
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  margin-bottom:5px;
+  font-weight:600;
+}
+
+.trk{
+  height:9px;
+  background:var(--line);
+  border-radius:6px;
+  overflow:hidden;
+}
+
+.trk i{
+  display:block;
+  height:100%;
+  border-radius:6px;
+}
+
+.grp{
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--mute);
+  margin:14px 4px 2px;
+  font-weight:700;
+}
+
+.wk{
+  display:flex;
+  justify-content:space-between;
+  padding:11px 4px;
+  font-size:14px;
+  border-top:1px solid var(--line);
+}
+
+.wk span{
+  color:var(--mute);
+  font-weight:600;
+}
+
+.wk span.neg{
+  color:var(--red);
+}
+
+.hero{
+  background:linear-gradient(135deg,var(--purple),var(--olive));
+  border-radius:22px;
+  padding:20px 16px;
+  margin-bottom:12px;
+  color:#fff;
+}
+
+.hero .eyebrow{
+  color:rgba(255,255,255,.75);
+}
+
+.hero .big{
+  color:#fff;
+}
+
+.hero .sub{
+  color:rgba(255,255,255,.85);
+}
+
+.hero .sub b{
+  color:#fff;
+}
+
+#m{
+  position:fixed;
+  inset:0;
+  background:rgba(20,18,16,.45);
+  display:none;
+  align-items:flex-end;
+  justify-content:center;
+  z-index:9;
+}
+
+#m.open{
+  display:flex;
+}
+
+.sheet{
+  background:var(--card);
+  width:100%;
+  max-width:520px;
+  border-radius:24px 24px 0 0;
+  padding:22px 20px calc(18px + env(safe-area-inset-bottom,0px));
+}
+
+.sheet h3{
+  font-family:"Space Grotesk",sans-serif;
+  margin:0 0 6px;
+  font-size:21px;
+  font-weight:700;
+}
+
+.sheet p{
+  color:var(--mute);
+  font-size:14px;
+  margin:8px 0;
+  line-height:1.5;
+}
+
+.sheet .row2{
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+  padding:7px 0;
+  border-top:1px solid var(--line);
+}
+
+.chk{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  font-size:14px;
+  margin-top:12px;
+}
+
+.chk input{
+  width:22px;
+  height:22px;
+  accent-color:var(--purple);
+}
+
+#err{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  background:var(--red);
+  color:#fff;
+  padding:12px 16px;
+  font:600 13px Inter,sans-serif;
+  z-index:99;
+  display:none;
+}
+
+/* iPhone stability */
 @media (max-width:520px){
-  html,body{width:100%;max-width:100%;overflow-x:hidden;position:relative;}
-  body{padding-left:12px;padding-right:12px;}
-  .card, header, .hero{width:100%;max-width:100%;min-width:0;}
-  .row{grid-template-columns:minmax(0,1fr) repeat(7,30px);column-gap:4px;}
-  .c,.c.s1,.c.s2,.c.today,.c.today.s1,.c.today.s2{
-    width:30px!important;min-width:30px!important;max-width:30px!important;
-    height:30px!important;min-height:30px!important;max-height:30px!important;
+  html,
+  body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  body{
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .card,
+  header,
+  .hero{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+  }
+
+  .row{
+    grid-template-columns:minmax(0,1fr) repeat(7,30px);
+    column-gap:4px;
+  }
+
+  .c,
+  .c.s1,
+  .c.s2,
+  .c.today,
+  .c.today.s1,
+  .c.today.s2{
+    width:30px!important;
+    min-width:30px!important;
+    max-width:30px!important;
+    height:30px!important;
+    min-height:30px!important;
+    max-height:30px!important;
     box-sizing:border-box!important;
   }
 }
 
-/* Keep the savings summary on exactly one line so the layout never shifts. */
-.topline{
+/* =========================================================
+   SAVINGS LINE STABILITY
+   Always reserve exactly two lines of vertical space.
+   ========================================================= */
+
+.savings-line{
   width:100%;
   min-width:0;
-  flex-wrap:nowrap !important;
-  white-space:nowrap !important;
+  height:40px;
+  line-height:20px;
+  margin-top:6px;
+  font-size:14px;
+  color:var(--mute);
+  overflow:hidden;
 }
-.topline > *{
-  white-space:nowrap !important;
+
+.savings-line .savings-text{
+  display:block;
+  white-space:nowrap;
 }
-.topline > :first-child{
-  min-width:0;
-  flex:1 1 auto;
+
+.savings-line .carry-text{
+  display:block;
+  white-space:nowrap;
 }
-.topline > :last-child{
-  flex:0 0 auto;
+
+/* When there is no carry, still reserve the second line. */
+.savings-line .carry-placeholder{
+  display:block;
+  height:20px;
 }
-</style>
+
+/* Reset button */
+.reset-wrap{
+  padding:18px 4px 10px;
+  text-align:center;
+}
+
+.reset-btn{
+  border:0;
+  background:none;
+  color:var(--mute);
+  font:600 12px Inter,sans-serif;
+  padding:12px 16px;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
 </style>
 </head>
+
 <body>
+
 <div id="err"></div>
 <div id="app"></div>
-<nav><button data-t="week" onclick="go('week')">Week</button><button data-t="log" onclick="go('log')">Log</button></nav>
+
+<nav>
+  <button data-t="week" onclick="go('week')">Week</button>
+  <button data-t="log" onclick="go('log')">Log</button>
+</nav>
+
 <div id="m"></div>
+
 <script>
-window.onerror=function(m){var e=document.getElementById("err");e.textContent="Something broke: "+m;e.style.display="block"};
 
-var DAILY=[["bed","make bed",30,20],["ex","exercise",70,50],["clock","clock in for school",70,50],["tidy","tidy room",30,30],["hobby","30 min hobby",30,15]];
-var WEEKLY=[["chart","chore chart",100,80],["laundry","laundry",80,50],["plans","make/keep plans",100,50],["job","job hunting",110,60]];
-var DN=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],KEY="yolosybl.v1";
-var tab="week", S=load();
+window.onerror=function(m){
+  var e=document.getElementById("err");
+  e.textContent="Something broke: "+m;
+  e.style.display="block";
+};
 
-function z(n){return String(n).padStart(2,"0")}
-function iso(d){return d.getFullYear()+"-"+z(d.getMonth()+1)+"-"+z(d.getDate())}
-function pd(s){return new Date(s+"T00:00:00")}
-function fmt(d){return d.toLocaleDateString("en-US",{month:"short",day:"numeric"})}
-function monday(d){var x=new Date(d);x.setHours(0,0,0,0);x.setDate(x.getDate()-((x.getDay()+6)%7));return x}
-function money(n){var s=n<0?"-$":"$";return s+Math.abs(n).toFixed(2)}
+var DAILY=[
+  ["bed","make bed",30,20],
+  ["ex","exercise",70,50],
+  ["clock","clock in for school",70,50],
+  ["tidy","tidy room",30,30],
+  ["hobby","30 min hobby",30,15]
+];
+
+var WEEKLY=[
+  ["chart","chore chart",100,80],
+  ["laundry","laundry",80,50],
+  ["plans","make/keep plans",100,50],
+  ["job","job hunting",110,60]
+];
+
+var DN=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
+    KEY="yolosybl.v1";
+
+var tab="week",
+    S=load();
+
+function z(n){
+  return String(n).padStart(2,"0");
+}
+
+function iso(d){
+  return d.getFullYear()+"-"+z(d.getMonth()+1)+"-"+z(d.getDate());
+}
+
+function pd(s){
+  return new Date(s+"T00:00:00");
+}
+
+function fmt(d){
+  return d.toLocaleDateString("en-US",{
+    month:"short",
+    day:"numeric"
+  });
+}
+
+function monday(d){
+  var x=new Date(d);
+  x.setHours(0,0,0,0);
+  x.setDate(x.getDate()-((x.getDay()+6)%7));
+  return x;
+}
+
+function money(n){
+  var s=n<0?"-$":"$";
+  return s+Math.abs(n).toFixed(2);
+}
 
 function load(){
   try{
     var s=JSON.parse(localStorage.getItem(KEY));
     if(s&&s.week) return s;
   }catch(e){}
-  return{week:iso(monday(new Date())),carry:0,d:{},w:{},hist:[]};
+
+  return{
+    week:iso(monday(new Date())),
+    carry:0,
+    d:{},
+    w:{},
+    hist:[]
+  };
 }
-function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+
+function save(){
+  try{
+    localStorage.setItem(KEY,JSON.stringify(S));
+  }catch(e){}
+}
+
+/* Completely restore the app to its original state. */
+function resetApp(){
+  var confirmed=confirm(
+    "Reset goals!?\n\nThis will erase your weekly progress, savings history, and carried points."
+  );
+
+  if(!confirmed) return;
+
+  localStorage.removeItem(KEY);
+
+  S={
+    week:iso(monday(new Date())),
+    carry:0,
+    d:{},
+    w:{},
+    hist:[]
+  };
+
+  tab="week";
+  render();
+  window.scrollTo(0,0);
+}
 
 function todayIdx(){
-  var t=new Date();t.setHours(0,0,0,0);
+  var t=new Date();
+  t.setHours(0,0,0,0);
+
   var n=Math.round((t-pd(S.week))/86400000);
+
   return (n>=0&&n<7)?n:-1;
 }
+
 function closable(){
-  var s=pd(S.week);s.setDate(s.getDate()+6);s.setHours(18,0,0,0);
+  var s=pd(S.week);
+  s.setDate(s.getDate()+6);
+  s.setHours(18,0,0,0);
+
   return new Date()>=s;
 }
 
-// weekly task state: S.w[id] = {day:0-6, state:1(done) or 2(missed)}
-function wState(id){return S.w[id]||null}
+function wState(id){
+  return S.w[id]||null;
+}
+
 function tapDaily(id,i){
   if(i>todayIdx()) return;
+
   var r=S.d[id]||(S.d[id]=[0,0,0,0,0,0,0]);
-  r[i]=(r[i]+1)%3; save(); render();
+
+  r[i]=(r[i]+1)%3;
+
+  save();
+  render();
 }
+
 function tapWeekly(id,i){
   if(i>todayIdx()) return;
+
   var cur=S.w[id];
+
   if(cur && cur.day===i){
-    if(cur.state===1) S.w[id]={day:i,state:2};
-    else S.w[id]=null;
-  } else {
-    S.w[id]={day:i,state:1};
+    if(cur.state===1){
+      S.w[id]={day:i,state:2};
+    }else{
+      S.w[id]=null;
+    }
+  }else{
+    S.w[id]={
+      day:i,
+      state:1
+    };
   }
-  save(); render();
+
+  save();
+  render();
 }
 
-// points earned so far this week, applied live (weekly deductions are instant; unmarked daily cells cost nothing until close-out)
 function livePoints(){
   var p=0;
+
   DAILY.forEach(function(t){
-    var id=t[0],a=t[2],b=t[3],r=S.d[id]||[];
-    for(var i=0;i<7;i++){ if(r[i]===1)p+=a; else if(r[i]===2)p-=b; }
-  });
-  WEEKLY.forEach(function(t){
-    var id=t[0],a=t[2],b=t[3],w=S.w[id];
-    if(w){ if(w.state===1)p+=a; else p-=b; }
-  });
-  return p;
-}
-// final points at close-out: unmarked daily cells and unmarked weekly tasks count as missed
-function finalPoints(){
-  var p=0,miss=0;
-  DAILY.forEach(function(t){
-    var id=t[0],a=t[2],b=t[3],r=S.d[id]||[];
+    var id=t[0],
+        a=t[2],
+        b=t[3],
+        r=S.d[id]||[];
+
     for(var i=0;i<7;i++){
-      if(r[i]===1)p+=a; else if(r[i]===2)p-=b; else {p-=b; miss++;}
+      if(r[i]===1) p+=a;
+      else if(r[i]===2) p-=b;
     }
   });
+
   WEEKLY.forEach(function(t){
-    var id=t[0],a=t[2],b=t[3],w=S.w[id];
-    if(w){ if(w.state===1)p+=a; else p-=b; }
-    else { p-=b; miss++; }
+    var id=t[0],
+        a=t[2],
+        b=t[3],
+        w=S.w[id];
+
+    if(w){
+      if(w.state===1) p+=a;
+      else p-=b;
+    }
   });
-  return {p:p,miss:miss};
+
+  return p;
 }
 
-function go(t){tab=t; render(); window.scrollTo(0,0);}
+function finalPoints(){
+  var p=0,
+      miss=0;
+
+  DAILY.forEach(function(t){
+    var id=t[0],
+        a=t[2],
+        b=t[3],
+        r=S.d[id]||[];
+
+    for(var i=0;i<7;i++){
+      if(r[i]===1){
+        p+=a;
+      }else if(r[i]===2){
+        p-=b;
+      }else{
+        p-=b;
+        miss++;
+      }
+    }
+  });
+
+  WEEKLY.forEach(function(t){
+    var id=t[0],
+        a=t[2],
+        b=t[3],
+        w=S.w[id];
+
+    if(w){
+      if(w.state===1) p+=a;
+      else p-=b;
+    }else{
+      p-=b;
+      miss++;
+    }
+  });
+
+  return{
+    p:p,
+    miss:miss
+  };
+}
+
+function go(t){
+  tab=t;
+  render();
+  window.scrollTo(0,0);
+}
 
 function head(mon,t){
   var h='<div class="row hd"><div></div>';
+
   for(var i=0;i<7;i++){
-    var d=new Date(mon); d.setDate(mon.getDate()+i);
-    h+='<div class="'+(i===t?"t":"")+'">'+DN[i].slice(0,1)+'<b>'+d.getDate()+'</b></div>';
+    var d=new Date(mon);
+    d.setDate(mon.getDate()+i);
+
+    h+='<div class="'+(i===t?"t":"")+'">'+
+       DN[i].slice(0,1)+
+       '<b>'+d.getDate()+'</b>'+
+       '</div>';
   }
+
   return h+'</div>';
 }
 
 function weekView(){
-  var mon=pd(S.week), sun=new Date(mon); sun.setDate(mon.getDate()+6);
-  var t=todayIdx();
-  var live=livePoints();
-  var pool=S.carry+live;
-  var h='';
-  h+='<header><div class="htop"><div class="hleft"><div class="eyebrow">'+fmt(mon)+' – '+fmt(sun)+'</div>';
-  h+='<div class="big'+(pool<0?" neg":"")+'">'+pool+'<span class="unit">pts</span></div>';
-  h+='<div class="sub">'+money(Math.max(0,pool)/100)+' to move to savings';
-  if(S.carry) h+=' &middot; <b>'+S.carry+' pt</b> carried from last week';
-  h+='</div></div><div class="title">goals!</div></div></header>';
 
-  h+='<section class="card"><h2><span class="dot" style="background:var(--purple)"></span>daily</h2>'+head(mon,t);
+  var mon=pd(S.week),
+      sun=new Date(mon);
+
+  sun.setDate(mon.getDate()+6);
+
+  var t=todayIdx(),
+      live=livePoints(),
+      pool=S.carry+live,
+      h='';
+
+  h+='<header>';
+  h+='<div class="htop">';
+  h+='<div class="hleft">';
+
+  h+='<div class="eyebrow">'+fmt(mon)+' – '+fmt(sun)+'</div>';
+
+  h+='<div class="big'+(pool<0?" neg":"")+'">'+
+      pool+
+      '<span class="unit">pts</span>'+
+      '</div>';
+
+  /*
+    Always render TWO lines.
+
+    The first line now shows the actual pool value:
+    positive = "$X.XX to transfer to savings"
+    negative = "-$X.XX to transfer to savings"
+
+    This means a negative balance is no longer forced to $0.00.
+  */
+  h+='<div class="savings-line">';
+
+  h+='<span class="savings-text">'+
+     money(pool/100)+
+     ' to transfer to savings'+
+     '</span>';
+
+  if(S.carry){
+    h+='<span class="carry-text">'+
+       S.carry+
+       ' pt carried from last week'+
+       '</span>';
+  }else{
+    h+='<span class="carry-placeholder"></span>';
+  }
+
+  h+='</div>';
+
+  h+='</div>';
+
+  h+='<div class="title">goals!</div>';
+
+  h+='</div>';
+  h+='</header>';
+
+  h+='<section class="card">';
+  h+='<h2><span class="dot" style="background:var(--purple)"></span>daily</h2>';
+  h+=head(mon,t);
+
   DAILY.forEach(function(task){
-    var id=task[0],nm=task[1],a=task[2],b=task[3];
-    var r=S.d[id]||[];
-    h+='<div class="row"><div class="lbl">'+nm+'<small>+'+a+' / \u2212'+b+'</small></div>';
+
+    var id=task[0],
+        nm=task[1],
+        a=task[2],
+        b=task[3],
+        r=S.d[id]||[];
+
+    h+='<div class="row">';
+    h+='<div class="lbl">'+
+       nm+
+       '<small>+'+
+       a+
+       ' / −'+
+       b+
+       '</small>'+
+       '</div>';
+
     for(var i=0;i<7;i++){
+
       var v=r[i]||0;
-      h+='<button class="c s'+v+(i===t?" today":"")+(i>t?" future":"")+'" onclick="tapDaily(\''+id+'\','+i+')">'+(v===1?"\u2713":v===2?"\u2715":"")+'</button>';
+
+      h+='<button class="c s'+
+         v+
+         (i===t?" today":"")+
+         (i>t?" future":"")+
+         '" onclick="tapDaily(\''+
+         id+
+         '\','+
+         i+
+         ')">'+
+         (v===1?"✓":v===2?"✕":"")+
+         '</button>';
     }
+
     h+='</div>';
   });
+
   h+='</section>';
 
-  h+='<section class="card"><h2><span class="dot" style="background:var(--olive)"></span>weekly</h2>'+head(mon,t);
+  h+='<section class="card">';
+  h+='<h2><span class="dot" style="background:var(--olive)"></span>weekly</h2>';
+  h+=head(mon,t);
+
   WEEKLY.forEach(function(task){
-    var id=task[0],nm=task[1],a=task[2],b=task[3];
-    var w=S.w[id];
-    h+='<div class="row"><div class="lbl">'+nm+'<small>+'+a+' / \u2212'+b+'</small></div>';
+
+    var id=task[0],
+        nm=task[1],
+        a=task[2],
+        b=task[3],
+        w=S.w[id];
+
+    h+='<div class="row">';
+    h+='<div class="lbl">'+
+       nm+
+       '<small>+'+
+       a+
+       ' / −'+
+       b+
+       '</small>'+
+       '</div>';
+
     for(var i=0;i<7;i++){
+
       var v=(w&&w.day===i)?w.state:0;
-      h+='<button class="c s'+v+(i===t?" today":"")+(i>t?" future":"")+'" onclick="tapWeekly(\''+id+'\','+i+')">'+(v===1?"\u2713":v===2?"\u2715":"")+'</button>';
+
+      h+='<button class="c s'+
+         v+
+         (i===t?" today":"")+
+         (i>t?" future":"")+
+         '" onclick="tapWeekly(\''+
+         id+
+         '\','+
+         i+
+         ')">'+
+         (v===1?"✓":v===2?"✕":"")+
+         '</button>';
     }
+
     h+='</div>';
   });
+
   h+='</section>';
 
-  if(closable()) h+='<button class="pri" onclick="openClose()">Close out this week</button>';
-  else h+='<p class="note">Week close-out unlocks Sunday at 6 pm.</p>';
+  if(closable()){
+    h+='<button class="pri" onclick="openClose()">Close out this week</button>';
+  }else{
+    h+='<p class="note">Week close-out unlocks Sunday at 6 pm.</p>';
+  }
+
+  /* Reset is always present at the bottom. */
+  h+='<div class="reset-wrap">';
+  h+='<button class="reset-btn" onclick="resetApp()">Reset app</button>';
+  h+='</div>';
+
   return h;
 }
 
 function logView(){
-  var H=S.hist, n=H.length;
-  var totalSaved=0; H.forEach(function(x){totalSaved+=x.transfer});
+
+  var H=S.hist,
+      n=H.length,
+      totalSaved=0;
+
+  H.forEach(function(x){
+    totalSaved+=x.transfer;
+  });
+
   var h='';
-  h+='<div class="hero"><div class="htop"><div class="hleft"><div class="eyebrow">Saved to date</div>';
+
+  h+='<div class="hero">';
+  h+='<div class="htop">';
+  h+='<div class="hleft">';
+  h+='<div class="eyebrow">Saved to date</div>';
   h+='<div class="big">'+money(totalSaved/100)+'</div>';
-  h+='<div class="sub">across '+n+' closed week'+(n===1?"":"s")+'</div></div><div class="title">goals!</div></div></div>';
+  h+='<div class="sub">across '+n+' closed week'+(n===1?"":"s")+'</div>';
+  h+='</div>';
+  h+='<div class="title">goals!</div>';
+  h+='</div>';
+  h+='</div>';
 
   if(!n){
+
     h+='<p class="note">Close out your first week to start building your history.</p>';
-    return h;
+
+  }else{
+
+    var avg=Math.round(
+      H.reduce(function(s,x){
+        return s+x.p;
+      },0)/n
+    );
+
+    h+='<section class="card">';
+    h+='<h2><span class="dot" style="background:var(--lav)"></span>averages</h2>';
+    h+='<div class="wk" style="border-top:none">';
+    h+='<div>Avg points per week</div>';
+    h+='<span>'+avg+' pts</span>';
+    h+='</div>';
+    h+='</section>';
+
+    h+='<section class="card">';
+    h+='<h2><span class="dot" style="background:var(--purple)"></span>completion rate</h2>';
+
+    h+='<div class="grp">daily</div>';
+
+    DAILY.forEach(function(t){
+
+      var id=t[0],
+          nm=t[1],
+          done=0;
+
+      H.forEach(function(x){
+        (x.d[id]||[]).forEach(function(v){
+          if(v===1) done++;
+        });
+      });
+
+      var pc=Math.round(done/(7*n)*100);
+
+      h+='<div class="bar">';
+      h+='<div><span>'+nm+'</span><b>'+pc+'%</b></div>';
+      h+='<div class="trk">';
+      h+='<i style="width:'+pc+'%;background:var(--purple)"></i>';
+      h+='</div>';
+      h+='</div>';
+    });
+
+    h+='<div class="grp">weekly</div>';
+
+    WEEKLY.forEach(function(t){
+
+      var id=t[0],
+          nm=t[1],
+          done=0;
+
+      H.forEach(function(x){
+        var w=x.w[id];
+
+        if(w&&w.state===1) done++;
+      });
+
+      var pc=Math.round(done/n*100);
+
+      h+='<div class="bar">';
+      h+='<div><span>'+nm+'</span><b>'+pc+'%</b></div>';
+      h+='<div class="trk">';
+      h+='<i style="width:'+pc+'%;background:var(--olive)"></i>';
+      h+='</div>';
+      h+='</div>';
+    });
+
+    h+='</section>';
+
+    h+='<section class="card">';
+    h+='<h2><span class="dot" style="background:var(--red)"></span>Weeks</h2>';
+
+    var rev=H.slice().reverse();
+
+    rev.forEach(function(x){
+
+      var m=pd(x.week),
+          e=new Date(m);
+
+      e.setDate(m.getDate()+6);
+
+      h+='<div class="wk">';
+      h+='<div>'+fmt(m)+' – '+fmt(e)+'</div>';
+      h+='<span'+
+         (x.transfer<=0?' class="neg"':'')+
+         '>'+
+         x.p+
+         ' pts · '+
+         money(x.transfer/100)+
+         '</span>';
+      h+='</div>';
+    });
+
+    h+='</section>';
   }
 
-  var avg=Math.round(H.reduce(function(s,x){return s+x.p},0)/n);
-  h+='<section class="card"><h2><span class="dot" style="background:var(--lav)"></span>averages</h2>';
-  h+='<div class="wk" style="border-top:none"><div>Avg points per week</div><span>'+avg+' pts</span></div>';
-  h+='</section>';
+  /* Reset is also always present on the Log tab. */
+  h+='<div class="reset-wrap">';
+  h+='<button class="reset-btn" onclick="resetApp()">Reset app</button>';
+  h+='</div>';
 
-  h+='<section class="card"><h2><span class="dot" style="background:var(--purple)"></span>completion rate</h2>';
-  h+='<div class="grp">daily</div>';
-  DAILY.forEach(function(t){
-    var id=t[0],nm=t[1];
-    var done=0;
-    H.forEach(function(x){ (x.d[id]||[]).forEach(function(v){ if(v===1) done++; }); });
-    var pc=Math.round(done/(7*n)*100);
-    h+='<div class="bar"><div><span>'+nm+'</span><b>'+pc+'%</b></div><div class="trk"><i style="width:'+pc+'%;background:var(--purple)"></i></div></div>';
-  });
-  h+='<div class="grp">weekly</div>';
-  WEEKLY.forEach(function(t){
-    var id=t[0],nm=t[1];
-    var done=0;
-    H.forEach(function(x){ var w=x.w[id]; if(w&&w.state===1) done++; });
-    var pc=Math.round(done/n*100);
-    h+='<div class="bar"><div><span>'+nm+'</span><b>'+pc+'%</b></div><div class="trk"><i style="width:'+pc+'%;background:var(--olive)"></i></div></div>';
-  });
-  h+='</section>';
-
-  h+='<section class="card"><h2><span class="dot" style="background:var(--red)"></span>Weeks</h2>';
-  var rev=H.slice().reverse();
-  rev.forEach(function(x){
-    var m=pd(x.week), e=new Date(m); e.setDate(m.getDate()+6);
-    h+='<div class="wk"><div>'+fmt(m)+' \u2013 '+fmt(e)+'</div><span'+(x.transfer<=0?' class="neg"':'')+'>'+x.p+' pts \u00b7 '+money(x.transfer/100)+'</span></div>';
-  });
-  h+='</section>';
   return h;
 }
 
 function render(){
-  document.getElementById("app").innerHTML = tab==="week" ? weekView() : logView();
+
+  document.getElementById("app").innerHTML =
+    tab==="week" ? weekView() : logView();
+
   var btns=document.querySelectorAll("nav button");
-  for(var i=0;i<btns.length;i++) btns[i].classList.toggle("on", btns[i].dataset.t===tab);
+
+  for(var i=0;i<btns.length;i++){
+    btns[i].classList.toggle(
+      "on",
+      btns[i].dataset.t===tab
+    );
+  }
 }
 
 function openClose(){
-  var f=finalPoints();
-  var pool=S.carry+f.p;
-  var transfer=Math.max(0,pool);
-  var m=document.getElementById("m");
-  var h='<div class="sheet"><h3>Close out the week</h3>';
-  h+='<div class="big'+(pool<0?" neg":"")+'" style="font-size:38px">'+pool+'<span class="unit">pts</span></div>';
-  if(f.miss) h+='<p>'+f.miss+' unmarked item'+(f.miss>1?"s":"")+' counted as missed.</p>';
-  if(S.carry) h+='<div class="row2"><span>Carried from before</span><b>'+S.carry+' pts</b></div>';
-  h+='<div class="row2"><span>This week</span><b>'+f.p+' pts</b></div>';
-  if(pool>0){
-    h+='<p>Move <b>'+money(transfer/100)+'</b> to your savings account.</p>';
-    h+='<label class="chk"><input type="checkbox" onchange="document.getElementById(\'go\').disabled=!this.checked"> I\u2019ve transferred '+money(transfer/100)+'</label>';
-  } else {
-    h+='<p>Nothing to transfer &mdash; this deficit carries into next week\u2019s total.</p>';
+
+  var f=finalPoints(),
+      pool=S.carry+f.p,
+      transfer=Math.max(0,pool),
+      m=document.getElementById("m"),
+      h='';
+
+  h+='<div class="sheet">';
+  h+='<h3>Close out the week</h3>';
+
+  h+='<div class="big'+
+     (pool<0?" neg":"")+
+     '" style="font-size:38px">'+
+     pool+
+     '<span class="unit">pts</span>'+
+     '</div>';
+
+  if(f.miss){
+    h+='<p>'+
+       f.miss+
+       ' unmarked item'+
+       (f.miss>1?"s":"")+
+       ' counted as missed.'+
+       '</p>';
   }
-  h+='<button id="go" class="pri" '+(pool>0?"disabled":"")+' onclick="doClose('+f.p+','+f.miss+')">Start next week</button>';
-  h+='<button class="ghost" onclick="closeM()">Not yet</button></div>';
+
+  if(S.carry){
+    h+='<div class="row2">';
+    h+='<span>Carried from before</span>';
+    h+='<b>'+S.carry+' pts</b>';
+    h+='</div>';
+  }
+
+  h+='<div class="row2">';
+  h+='<span>This week</span>';
+  h+='<b>'+f.p+' pts</b>';
+  h+='</div>';
+
+  if(pool>0){
+
+    h+='<p>Move <b>'+
+       money(transfer/100)+
+       '</b> to your savings account.</p>';
+
+    h+='<label class="chk">';
+    h+='<input type="checkbox" onchange="document.getElementById(\'go\').disabled=!this.checked">';
+    h+=' I’ve transferred '+money(transfer/100);
+    h+='</label>';
+
+  }else{
+
+    h+='<p>Nothing to transfer — this deficit carries into next week’s total.</p>';
+  }
+
+  h+='<button id="go" class="pri" '+
+     (pool>0?"disabled":"")+
+     ' onclick="doClose('+f.p+','+f.miss+')">'+
+     'Start next week'+
+     '</button>';
+
+  h+='<button class="ghost" onclick="closeM()">Not yet</button>';
+
+  h+='</div>';
+
   m.innerHTML=h;
   m.classList.add("open");
 }
-function closeM(){document.getElementById("m").classList.remove("open")}
+
+function closeM(){
+  document.getElementById("m").classList.remove("open");
+}
+
 function doClose(weekPoints){
-  var pool=S.carry+weekPoints;
-  var transfer=Math.max(0,pool);
-  var carryAfter=Math.min(0,pool);
-  S.hist.push({week:S.week, d:S.d, w:S.w, p:weekPoints, carryBefore:S.carry, transfer:transfer});
-  var n=pd(S.week); n.setDate(n.getDate()+7);
-  S.week=iso(n); S.carry=carryAfter; S.d={}; S.w={};
-  save(); closeM(); tab="week"; render(); window.scrollTo(0,0);
+
+  var pool=S.carry+weekPoints,
+      transfer=Math.max(0,pool),
+      carryAfter=Math.min(0,pool);
+
+  S.hist.push({
+    week:S.week,
+    d:S.d,
+    w:S.w,
+    p:weekPoints,
+    carryBefore:S.carry,
+    transfer:transfer
+  });
+
+  var n=pd(S.week);
+
+  n.setDate(n.getDate()+7);
+
+  S.week=iso(n);
+  S.carry=carryAfter;
+  S.d={};
+  S.w={};
+
+  save();
+  closeM();
+
+  tab="week";
+
+  render();
+
+  window.scrollTo(0,0);
 }
 
 render();
+
 </script>
 </body>
 </html>
